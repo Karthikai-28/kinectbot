@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find kinectbot_description)/launch/gazebo.launch"></include>
+
+  <param name="kinectbot_description" command="$(find xacro)/xacro '$(find kinectbot_description)/urdf/kinectbot.xacro'"/>
+
+  <include file="$(find kinectbot_description)/launch/display.launch"></include>
+
+  <!-- Show in Rviz   -->
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find kinectbot_description)/rviz/kinectbot.rviz" required="true" output="screen"/> -->
+
+</launch>

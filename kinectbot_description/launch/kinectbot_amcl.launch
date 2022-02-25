@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find kinectbot_description)/launch/kinectbot_rviz.launch"></include>
+
+  <include file="$(find kinectbot_navigation)/launch/amcl_demo.launch"></include>
+
+</launch>

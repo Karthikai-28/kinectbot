@@ -1,0 +1,11 @@
+<launch>
+  <arg default="$(find kinectbot_description)/urdf/kinectbot.xacro" name="model"/>
+  <arg default="true" name="gui"/>
+  <arg default="$(find kinectbot_description)/launch/nav.rviz" name="rvizconfig"/>
+  <param command="$(find xacro)/xacro $(arg model)" name="robot_description"/>
+  <param name="use_gui" value="$(arg gui)"/>
+  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> -->
+  <node args="-d $(arg rvizconfig)" name="rviz" pkg="rviz" required="true" type="rviz"/>
+  <!-- <include file="$(find kinectbot_description)/launch/gmapping.launch"></include> -->
+</launch>
